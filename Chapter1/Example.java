@@ -1,8 +1,7 @@
 package Chapter1;
 
 import edu.princeton.cs.algs4.StdIn;
-
-
+import edu.princeton.cs.algs4.StdOut;
 
 /*
  * Elementary sorting methods
@@ -32,8 +31,14 @@ public class Example {
 
     public static void show(Comparable[] a){
         for (int i = 0; i < a.length; i++)
-            StdIn.print(a[i] + " ");
-        StdOut.ptintln();
+            System.out.println(a[i] + " ");
+        StdOut.println();
+    }
+
+    private static boolean isSorted(String[] a) {
+        for (int i = 1; i < a.length; i++)
+            if(less(a[i], a[i-1])) return false;
+        return true;
     }
 
 
@@ -43,5 +48,7 @@ public class Example {
         assert isSorted(a);
         show(a);
     }
+
+
 
 }
